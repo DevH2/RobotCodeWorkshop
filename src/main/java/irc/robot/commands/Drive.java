@@ -23,7 +23,7 @@ public class Drive extends Command {
     // Here we call the setSpeed function from the Drivetrain Class, using values from the OI class's Joysticks.
     public void execute(){
 
-        drivetrain.setSpeed(oi.getLeftJoy(), oi.getRightJoy());
+        drivetrain.setSpeed(oi.getLeftJoy(), -oi.getRightJoy());
 
     }
 
