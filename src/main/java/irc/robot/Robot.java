@@ -5,7 +5,7 @@ import irc.robot.subsystems.Drivetrain;
 import edu.wpi.first.wpilibj.Ultrasonic;
 
 public class Robot extends TimedRobot {
-    private Ultrasonic ultra = new Ultrasonic(1,1);
+    private Ultrasonic ultra = new Ultrasonic(6,9);
     private Drivetrain drivetrain;
 
     // Runs once when the robot starts up.
