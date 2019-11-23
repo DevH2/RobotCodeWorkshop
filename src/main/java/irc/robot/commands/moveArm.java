@@ -7,25 +7,23 @@ import irc.robot.subsystems.Arm;
 import irc.robot.subsystems.Drivetrain;
 import edu.wpi.first.wpilibj.Ultrasonic;
 
-public class Drive extends Command {
+public class moveArm extends Command {
 
     private OI oi;
-    private Drivetrain drivetrain;
+    private Arm arm;
 
     //Getting OI and Drivetrain instances to run commands with.
-    public Drive(){
+    public moveArm(){
 
         oi = OI.getInstance();
-        drivetrain = Drivetrain.getInstance();
-
-        requires(drivetrain);
+        arm = arm.getInstance();
+        requires(arm);
 
     }
     //Execute runs when the robot is active.
     // Here we call the setSpeed function from the Drivetrain Class, using values from the OI class's Joysticks.
-    public void execute(){
-
-        drivetrain.setSpeed(-oi.getLeftJoy(), oi.getRightJoy());
+    public void move(double up){
+        arm.setSpeed(up);
     }
 
     //We never want this command to stop, so we return false for the abstract isFinished method.
