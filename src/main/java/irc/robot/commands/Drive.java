@@ -17,7 +17,6 @@ public class Drive extends Command {
 
         oi = OI.getInstance();
         drivetrain = Drivetrain.getInstance();
-
         requires(drivetrain);
 
     }

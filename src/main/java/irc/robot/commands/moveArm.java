@@ -16,7 +16,7 @@ public class moveArm extends Command {
     public moveArm(){
 
         oi = OI.getInstance();
-        arm = arm.getInstance();
+        arm = Arm.getInstance();
         requires(arm);
 
     }
