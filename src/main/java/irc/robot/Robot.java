@@ -33,7 +33,7 @@ public class Robot extends TimedRobot {
     @Override
     public void autonomousPeriodic() {
         Scheduler.getInstance().run();
-        arm.setSpeed(0.01);
+        //arm.setSpeed(-0.3);
     }
 
     // Runs once when teleoperated starts.

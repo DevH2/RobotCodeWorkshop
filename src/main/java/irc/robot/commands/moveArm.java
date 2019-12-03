@@ -25,7 +25,16 @@ public class moveArm extends Command {
     public void move(double up){
         arm.setSpeed(up);
     }
+    public void execute(){
 
+        if(oi.getLeftClicky()) {
+            arm.setSpeed(0.4);
+        } else if(oi.getRightClicky()){
+            arm.setSpeed(-0.5);
+        } else {
+            arm.setSpeed(0);
+        }
+    }
     //We never want this command to stop, so we return false for the abstract isFinished method.
     @Override
     protected boolean isFinished() {

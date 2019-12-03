@@ -34,12 +34,21 @@ public class OI {
         return leftJoy.getY();
 
     }
+    public boolean getLeftClicky() {
 
+        return leftJoy.getRawButton(1);
+
+    }
+    public boolean getRightClicky() {
+
+        return rightJoy.getRawButton(1);
+
+    }
     /** @return Right y-axis joystick **/
     public double getRightJoy() {
 
-        return rightJoy.getY();
 
+        return rightJoy.getY();
     }
 
 }
