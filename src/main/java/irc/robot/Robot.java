@@ -25,26 +25,40 @@ public class Robot extends TimedRobot {
     }
 
     // Runs once when autonomous starts.
+    private int run;
     @Override
     public void autonomousInit() {
+        run = 0;
     }
 
     // Runs every tick during autonomous.
     @Override
     public void autonomousPeriodic() {
-        Scheduler.getInstance().run();
-        //arm.setSpeed(-0.3);
+        run++;
+        if(run < 100)
+            drivetrain.setSpeed(0.3, 0.3);
+        else if(run < 130)
+            drivetrain.setSpeed(-0.5, 0.5);
+        else if(run < 150)
+            drivetrain.setSpeed(0.3, 0.3);
+        else if (run < 225){
+            arm.setSpeed(0.75);
+            drivetrain.setSpeed(0,0);
+        }
+        else if(run < 275)
+            arm.setSpeed(-0.2);
+
     }
 
     // Runs once when teleoperated starts.
     @Override
     public void teleopInit(){
+        drivetrain.setSpeed(0, 0);
     }
 
     // Runs every tick during teleoperated.
     @Override
     public void teleopPeriodic() {
-
         Scheduler.getInstance().run();
 
     }
