@@ -26,10 +26,7 @@ public class Drive extends Command {
 
         drivetrain.setSpeed(oi.getLeftJoy(), -oi.getRightJoy());
     }
-    public void setSpeed(double a, double b){
 
-        drivetrain.setSpeed(a, -b);
-    }
     //We never want this command to stop, so we return false for the abstract isFinished method.
     @Override
     protected boolean isFinished() {
