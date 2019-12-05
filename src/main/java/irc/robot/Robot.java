@@ -32,13 +32,14 @@ public class Robot extends TimedRobot {
     // Runs every tick during autonomous.
     @Override
     public void autonomousPeriodic() {
-        Scheduler.getInstance().run();
+        drivetrain.setSpeed(0.3, 0.3);
         //arm.setSpeed(-0.3);
     }
 
     // Runs once when teleoperated starts.
     @Override
     public void teleopInit(){
+        drivetrain.setSpeed(0, 0);
     }
 
     // Runs every tick during teleoperated.
