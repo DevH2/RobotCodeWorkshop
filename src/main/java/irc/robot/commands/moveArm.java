@@ -28,9 +28,9 @@ public class moveArm extends Command {
     public void execute(){
 
         if(oi.getLeftClicky()) {
-            arm.setSpeed(0.4);
+            arm.setSpeed(0.75);
         } else if(oi.getRightClicky()){
-            arm.setSpeed(-0.5);
+            arm.setSpeed(-0.25);
         } else {
             arm.setSpeed(0);
         }
