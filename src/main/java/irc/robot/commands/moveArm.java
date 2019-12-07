@@ -22,15 +22,12 @@ public class moveArm extends Command {
     }
     //Execute runs when the robot is active.
     // Here we call the setSpeed function from the Drivetrain Class, using values from the OI class's Joysticks.
-    public void move(double up){
-        arm.setSpeed(up);
-    }
     public void execute(){
 
         if(oi.getLeftClicky()) {
-            arm.setSpeed(0.75);
+            arm.setSpeed(-0.5);
         } else if(oi.getRightClicky()){
-            arm.setSpeed(-0.25);
+            arm.setSpeed(0.2);
         } else {
             arm.setSpeed(0);
         }

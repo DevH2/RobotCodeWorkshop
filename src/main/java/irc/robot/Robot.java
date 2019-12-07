@@ -36,18 +36,23 @@ public class Robot extends TimedRobot {
     public void autonomousPeriodic() {
         run++;
         if(run < 100)
-            drivetrain.setSpeed(0.3, 0.3);
-        else if(run < 130)
-            drivetrain.setSpeed(-0.5, 0.5);
+            drivetrain.setSpeed(-0.25, -0.25);
         else if(run < 150)
-            drivetrain.setSpeed(0.3, 0.3);
-        else if (run < 225){
-            arm.setSpeed(0.75);
+            drivetrain.setSpeed(0.33, -0.33);
+        else if(run < 200)
+            drivetrain.setSpeed(-0.2, -0.2);
+        else if(run < 275){
+            arm.setSpeed(-0.4);
             drivetrain.setSpeed(0,0);
         }
-        else if(run < 275)
-            arm.setSpeed(-0.2);
-
+        else if(run < 300)
+            arm.setSpeed(0);
+        else if(run < 350)
+            arm.setSpeed(0.2);
+        else {
+                arm.setSpeed(0);
+                drivetrain.setSpeed(0,0);
+        }
     }
 
     // Runs once when teleoperated starts.
